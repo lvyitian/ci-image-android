@@ -20,6 +20,7 @@ apt-get install -y --no-install-recommends \
 	git \
 	default-jdk-headless \
 	unzip \
+	curl \
 	wget
 
 # clean up for smaller image size
