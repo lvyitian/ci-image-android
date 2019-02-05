@@ -41,7 +41,7 @@ mv tools ${ANDROID_HOME}/
 
 # Accept all those nasty EULAs
 mkdir -p ${ANDROID_HOME}/licenses/
-printf "\n8933bad161af4178b1185d1a37fbf41ea5269c55\nd56f5187479451eabf01fb78af6dfcb131a6481e" > ${ANDROID_HOME}/licenses/android-sdk-license
+printf "\n8933bad161af4178b1185d1a37fbf41ea5269c55\nd56f5187479451eabf01fb78af6dfcb131a6481e\n24333f8a63b6825ea9c5514f83c2829b004d1fee" > ${ANDROID_HOME}/licenses/android-sdk-license
 printf "\n84831b9409646a918e30573bab4c9c91346d8abd" > ${ANDROID_HOME}/licenses/android-sdk-preview-license
 printf "\n79120722343a6f314e0719f863036c702b0e6b2a\n84831b9409646a918e30573bab4c9c91346d8abd" > ${ANDROID_HOME}/licenses/android-sdk-preview-license-old
 
@@ -49,5 +49,5 @@ printf "\n79120722343a6f314e0719f863036c702b0e6b2a\n84831b9409646a918e30573bab4c
 mkdir /root/.android
 touch /root/.android/repositories.cfg
 echo y | $ANDROID_HOME/tools/bin/sdkmanager "platform-tools"
-echo y | $ANDROID_HOME/tools/bin/sdkmanager "build-tools;28.0.2"
+echo y | $ANDROID_HOME/tools/bin/sdkmanager "build-tools;28.0.3"
 echo y | $ANDROID_HOME/tools/bin/sdkmanager "platforms;android-28"
