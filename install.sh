@@ -15,6 +15,9 @@ echo "path-exclude=/usr/share/doc/*" >> /etc/dpkg/dpkg.cfg.d/01_nodoc
 apt-get update
 apt-get -y upgrade
 
+# install of default-jdk-headless fails otherwise on *-slim image
+mkdir -p /usr/share/man/man1
+
 # install Debian packages
 apt-get install -y --no-install-recommends \
 	git \
@@ -32,8 +35,8 @@ rm -rf /var/lib/apt/lists/*
 # Android Part #
 ################
 
-# Install Android SDK Manager (tools 26.1.1)
-wget --no-verbose -O tools.zip https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip
+# Install Android SDK Manager
+wget --no-verbose -O tools.zip https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
 unzip tools.zip
 rm tools.zip
 mkdir ${ANDROID_HOME}
@@ -49,5 +52,5 @@ printf "\n79120722343a6f314e0719f863036c702b0e6b2a\n84831b9409646a918e30573bab4c
 mkdir /root/.android
 touch /root/.android/repositories.cfg
 echo y | $ANDROID_HOME/tools/bin/sdkmanager "platform-tools"
-echo y | $ANDROID_HOME/tools/bin/sdkmanager "build-tools;28.0.3"
-echo y | $ANDROID_HOME/tools/bin/sdkmanager "platforms;android-28"
+echo y | $ANDROID_HOME/tools/bin/sdkmanager "build-tools;29.0.2"
+echo y | $ANDROID_HOME/tools/bin/sdkmanager "platforms;android-29"
