@@ -52,5 +52,5 @@ printf "\n79120722343a6f314e0719f863036c702b0e6b2a\n84831b9409646a918e30573bab4c
 mkdir /root/.android
 touch /root/.android/repositories.cfg
 echo y | $ANDROID_HOME/tools/bin/sdkmanager "platform-tools"
-echo y | $ANDROID_HOME/tools/bin/sdkmanager "build-tools;29.0.2"
-echo y | $ANDROID_HOME/tools/bin/sdkmanager "platforms;android-29"
+echo y | $ANDROID_HOME/tools/bin/sdkmanager "build-tools;30.0.2"
+echo y | $ANDROID_HOME/tools/bin/sdkmanager "platforms;android-30"
