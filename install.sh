@@ -36,11 +36,11 @@ rm -rf /var/lib/apt/lists/*
 ################
 
 # Install Android SDK Manager
-wget --no-verbose -O tools.zip https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
-unzip tools.zip
-rm tools.zip
-mkdir ${ANDROID_HOME}
-mv tools ${ANDROID_HOME}/
+wget --no-verbose -O cmdline-tools.zip https://dl.google.com/android/repository/commandlinetools-linux-7583922_latest.zip
+unzip cmdline-tools.zip
+rm cmdline-tools.zip
+mkdir -p ${ANDROID_HOME}/cmdline-tools
+mv cmdline-tools ${ANDROID_HOME}/cmdline-tools/latest
 
 # Accept all those nasty EULAs
 mkdir -p ${ANDROID_HOME}/licenses/
@@ -51,6 +51,6 @@ printf "\n79120722343a6f314e0719f863036c702b0e6b2a\n84831b9409646a918e30573bab4c
 # Install platform-tools, build-tools and platform to prevent re-download each time
 mkdir /root/.android
 touch /root/.android/repositories.cfg
-echo y | $ANDROID_HOME/tools/bin/sdkmanager "platform-tools"
-echo y | $ANDROID_HOME/tools/bin/sdkmanager "build-tools;30.0.3"
-echo y | $ANDROID_HOME/tools/bin/sdkmanager "platforms;android-30"
+echo y | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platform-tools"
+echo y | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "build-tools;30.0.3"
+echo y | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platforms;android-30"
