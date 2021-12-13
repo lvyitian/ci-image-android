@@ -19,9 +19,13 @@ apt-get -y upgrade
 mkdir -p /usr/share/man/man1
 
 # install Debian packages
+# `binutils` and `fakeroot` are needed for `packageDeb` task on Desktop
 apt-get install -y --no-install-recommends \
 	git \
 	default-jdk-headless \
+	openjdk-17-jdk-headless \
+	binutils \
+	fakeroot \
 	unzip \
 	curl \
 	wget
