@@ -1,4 +1,4 @@
-FROM debian:bullseye-slim
+FROM debian:buster-slim
 
 ENV LANG=C.UTF-8
 ENV DEBIAN_FRONTEND=noninteractive
