@@ -57,4 +57,8 @@ mkdir /root/.android
 touch /root/.android/repositories.cfg
 echo y | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platform-tools"
 echo y | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "build-tools;30.0.3"
+echo y | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "build-tools;31.0.0"
+echo y | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "build-tools;32.0.0"
 echo y | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platforms;android-30"
+echo y | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platforms;android-31"
+echo y | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platforms;android-32"
