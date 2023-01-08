@@ -36,25 +36,13 @@ apt-get clean
 rm -rf /var/lib/apt/lists/*
 
 ################
-# Android Part #
+# Wine Part    #
 ################
 
-# Install Android SDK Manager
-wget --no-verbose -O cmdline-tools.zip https://dl.google.com/android/repository/commandlinetools-linux-7583922_latest.zip
-unzip cmdline-tools.zip
-rm cmdline-tools.zip
-mkdir -p ${ANDROID_HOME}/cmdline-tools
-mv cmdline-tools ${ANDROID_HOME}/cmdline-tools/latest
-
-# Accept all those nasty EULAs
-mkdir -p ${ANDROID_HOME}/licenses/
-printf "\n8933bad161af4178b1185d1a37fbf41ea5269c55\nd56f5187479451eabf01fb78af6dfcb131a6481e\n24333f8a63b6825ea9c5514f83c2829b004d1fee" > ${ANDROID_HOME}/licenses/android-sdk-license
-printf "\n84831b9409646a918e30573bab4c9c91346d8abd" > ${ANDROID_HOME}/licenses/android-sdk-preview-license
-printf "\n79120722343a6f314e0719f863036c702b0e6b2a\n84831b9409646a918e30573bab4c9c91346d8abd" > ${ANDROID_HOME}/licenses/android-sdk-preview-license-old
-
-# Install platform-tools, build-tools and platform to prevent re-download each time
-mkdir /root/.android
-touch /root/.android/repositories.cfg
-echo y | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platform-tools"
-echo y | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "build-tools;30.0.3"
-echo y | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platforms;android-30"
+# Install Wine
+dpkg --add-architecture i386
+mkdir -pm755 /etc/apt/keyrings
+wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
+wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/focal/winehq-focal.sources
+apt-get update
+apt-get install -y winehq-stable
