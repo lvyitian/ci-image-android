@@ -41,6 +41,6 @@ rebuild consumers:
   before_script:
     - apk add --update curl && rm -rf /var/cache/apk/*
   script:
-    - "curl -X POST -F token=${REBUILD_EMULATOR} -F ref=main -F variables[RELEASE_TAG]=${CI_COMMIT_REF_NAME} https://code.briarproject.org/api/v4/projects/225/trigger/pipeline"
+    - "curl -X POST -F token=${REBUILD_EMULATOR} -F ref=master -F variables[RELEASE_TAG]=${CI_COMMIT_REF_NAME} https://code.briarproject.org/api/v4/projects/225/trigger/pipeline"
   only:
     - master

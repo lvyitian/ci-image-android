@@ -1,9 +1,8 @@
-FROM debian:bullseye-slim
+FROM ubuntu:22.04
 
 ENV LANG=C.UTF-8
 ENV DEBIAN_FRONTEND=noninteractive
 ENV ANDROID_HOME=/opt/android-sdk
-ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 
 WORKDIR /opt/briar-ci
 
