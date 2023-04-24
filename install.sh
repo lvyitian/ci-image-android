@@ -16,10 +16,15 @@ apt-get update
 apt-get -y upgrade
 
 # install Debian packages
-# `binutils` and `fakeroot` are needed for `packageDeb` task on Desktop
 apt-get install -y --no-install-recommends \
-	git \
-	wget
+	git wget \
+	libyaml-libyaml-perl libtemplate-perl libdatetime-perl \
+	libio-handle-util-perl libio-all-perl \
+	libio-captureoutput-perl libjson-perl libpath-tiny-perl \
+	libstring-shellquote-perl libsort-versions-perl \
+	libdigest-sha-perl libdata-uuid-perl libdata-dump-perl \
+	libfile-copy-recursive-perl libfile-slurp-perl \
+	mercurial uidmap
 
 # clean up for smaller image size
 apt-get -y autoremove --purge
