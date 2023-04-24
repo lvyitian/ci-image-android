@@ -17,7 +17,7 @@ apt-get -y upgrade
 
 # install Debian packages
 apt-get install -y --no-install-recommends \
-	git wget \
+	git wget software-properties-common \
 	libyaml-libyaml-perl libtemplate-perl libdatetime-perl \
 	libio-handle-util-perl libio-all-perl \
 	libio-captureoutput-perl libjson-perl libpath-tiny-perl \
