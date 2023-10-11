@@ -5,8 +5,7 @@ set -x
 echo "Testing Briar Desktop"
 git clone --recurse-submodules https://code.briarproject.org/briar/briar-desktop.git briar-desktop
 cd briar-desktop
-./gradlew -Dorg.gradle.java.home=/usr/lib/jvm/java-11-openjdk-amd64 --no-daemon kaptKotlin
-./gradlew -Dorg.gradle.java.home=/usr/lib/jvm/java-17-openjdk-amd64 --no-daemon -x kaptKotlin packageDeb
+./gradlew -Dorg.gradle.java.home=/usr/lib/jvm/java-17-openjdk-amd64 --no-daemon pinpitPackageDefaultDebDebianBullseyeX64
 cd ..
 echo "Building Briar Desktop was successful"
 
